@@ -10,7 +10,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
     defaultConfig {
-        applicationId "com.tistory.mybstory.basedaggerproject"
+        applicationId "com.tistory.mybstory.android_ble_example"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -61,7 +61,13 @@ dependencies {
     implementation "androidx.navigation:navigation-runtime-ktx:$navVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
 
+    // rx & ble
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+    implementation "com.polidea.rxandroidble2:rxandroidble:1.10.2"
+
     // etc
+    implementation 'pub.devrel:easypermissions:3.0.0'
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
     testImplementation 'junit:junit:4.12'

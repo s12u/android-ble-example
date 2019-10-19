@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BLE example</string>
+    <string name="permission_ble_location">Bluetooth and Location permission required</string>
 </resources>
