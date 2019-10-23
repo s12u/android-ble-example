@@ -62,7 +62,9 @@ class ScanFragment : BaseFragment() {
     @AfterPermissionGranted(RC_BLE_AND_LOCATION)
     fun requestPermissions() {
         if (EasyPermissions.hasPermissions(context!!, *perms)) {
-            disposables += viewModel.scanDevices().subscribe(
+
+            disposables += viewModel.scanDevices()
+                .subscribe(
                 {
                     // on next
                     adapter.addData(it)
@@ -91,7 +93,6 @@ class ScanFragment : BaseFragment() {
     companion object {
         const val RC_BLE_AND_LOCATION = 1
         val perms = arrayOf(
-                Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.BLUETOOTH
             )

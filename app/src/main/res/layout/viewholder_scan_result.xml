@@ -19,7 +19,7 @@
                 android:id="@+id/tv_device_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{result.scanRecord.deviceName}"
+                android:text='@{"name : " + result.scanRecord.deviceName}'
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,9 +27,17 @@
                 android:id="@+id/tv_mac_addr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{result.bleDevice.macAddress}"
+                android:text='@{"MAC addr : " + result.bleDevice.macAddress}'
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_device_name" />
+
+        <TextView
+                android:id="@+id/tv_rssi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{"RSSI : " + result.rssi}'
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_mac_addr"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
